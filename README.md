@@ -1,2 +1,2 @@
-# audio_player
-audio player with javascript
+# NXA_player
+NXAP a simple , powerfull , lightweight audio player for web
