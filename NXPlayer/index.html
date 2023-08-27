@@ -9,14 +9,15 @@
     <body>
         <div class="continer">
             <div class="info">
-                <img src="music-src/mmlp cover.JPG" alt="audio image" id="audioimg" class="image">
+                <img src="music-src/cover.jpg" alt="audio image" id="audioimg" class="image">
                 <span class="title" id="title"></span>
             </div>
             <div class="progressbar">
                 <div class="progresscontroler">
                     <div class="progress-continer">
-                        <div class="progress-line" id="progressor"></div>
-                        <div class="progress-buble" id="buble"></div>
+                        <input type="range" min="0" max="100" value="0" class="progress-line" id="progressor">
+                        <!-- <div class="progress-line" id="progressor"></div>
+                        <div class="progress-buble" id="buble"></div> -->
                     </div>
                     <p class="durationaudio" id="durationaudio">00:00</p>
                 </div>

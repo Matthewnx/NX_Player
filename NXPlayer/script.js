@@ -7,7 +7,6 @@ const audioimage = document.getElementById('audioimg');
 const audiotitle = document.getElementById('title');
 const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
-const buble = document.getElementById('buble');
 
 const audio = new Audio();
 
@@ -15,19 +14,19 @@ const audio = new Audio();
 let audios = 
 [
     {
-        image:'music-src/',
-        title:'',
-        file:'music-src/'
+        image:'music-src/cover.jpg',
+        title:'down town',
+        file:'music-src/downtown.mp3'
     },
     {
-        image:'music-src/',
-        title:'',
-        file:'music-src/'
+        image:'music-src/cover.jpg',
+        title:'down town',
+        file:'music-src/downtown.mp3'
     },
     {
-        image:'music-src/',
-        title:'',
-        file:'music-src/'
+        image:'music-src/cover.jpg',
+        title:'down town',
+        file:'music-src/downtown.mp3'
     }
 ]
 let playing = false;
@@ -84,9 +83,8 @@ function progressbar()
     //set time progressor line 
     let time = audio.currentTime;
     let duration = audio.duration;
-    let progresswidth = (time / duration) * 100;
-    progress.style.width= `${progresswidth}%`;
-    buble.style.left= `${progresswidth - 1 }%`;
+    let progressvalue = (time / duration) * 100;
+    progress.ariaValueNow = progressvalue;
 
     //calculate duration times
     let hours = Math.floor(time / 60);
