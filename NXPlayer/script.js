@@ -14,17 +14,17 @@ const audio = new Audio();
 let audios = 
 [
     {
-        image:'music-src/cover.jpg',
+        image:'music-src/heart.PNG',
         title:'down town',
         file:'music-src/downtown.mp3'
     },
     {
-        image:'music-src/cover.jpg',
+        image:'music-src/heart.PNG',
         title:'down town',
         file:'music-src/downtown.mp3'
     },
     {
-        image:'music-src/cover.jpg',
+        image:'music-src/heart.PNG',
         title:'down town',
         file:'music-src/downtown.mp3'
     }
