@@ -1,5 +1,5 @@
 
-const playbtn = document.getlementById('playbtn');
+const playbtn = document.getElmentById('playbtn');
 const prevbtn = document.getElmentById('prev');
 const nextbtn = document.getElementById('next');
 const repeatbtn = document.getElementById('repeat');
@@ -14,19 +14,19 @@ const audio = new Audio();
 let audios = 
 [
     {
-        image:'music-src/',
-        title:'',
-        file:'music-src/'
+        image:'music-src/cover.jpg',
+        title:'downtown glow',
+        file:'music-src/Downtown glow.mp3'
     },
     {
-        image:'music-src/',
+        image:'music-src/cover.jpg',
         title:'',
-        file:'music-src/'
+        file:'music-src/Downtown glow.mp3'
     },
     {
-        image:'music-src/',
+        image:'music-src/cover.jpg',
         title:'',
-        file:'music-src/'
+        file:'music-src/Downtown glow.mp3'
     }
 ]
 let playing = false;

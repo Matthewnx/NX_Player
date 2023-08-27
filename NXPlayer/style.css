@@ -38,7 +38,10 @@ button
     font-size: 17px;
     background-color: rgb(98, 253, 137);
 }
-
+button:hover
+{
+    background-color: rgb(93, 240, 129);
+}
 .repeatactive
 {
     background-color:rgb(98, 196, 253) ;
