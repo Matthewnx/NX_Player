@@ -1,13 +1,12 @@
 
-const playbtn = document.getElementById('playbtn');
-const prevbtn = document.getElementById('prev');
+const playbtn = document.getlementById('playbtn');
+const prevbtn = document.getElmentById('prev');
 const nextbtn = document.getElementById('next');
 const repeatbtn = document.getElementById('repeat');
 const audioimage = document.getElementById('audioimg');
 const audiotitle = document.getElementById('title');
 const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
-const buble = document.getElementById('buble');
 
 const audio = new Audio();
 
@@ -84,9 +83,8 @@ function progressbar()
     //set time progressor line 
     let time = audio.currentTime;
     let duration = audio.duration;
-    let progresswidth = (time / duration) * 100;
-    progress.style.width= `${progresswidth}%`;
-    buble.style.left= `${progresswidth - 1 }%`;
+    let progressvalue = (time / duration) * 100;
+    progress.nodeValue = progressvalue;
 
     //calculate duration times
     let hours = Math.floor(time / 60);
