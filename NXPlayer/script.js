@@ -30,7 +30,7 @@ let audios =
     }
 ]
 let playing = false;
-let repeat = true;
+let repeat = false;
 let audioindex = 0;
 
 
@@ -75,16 +75,16 @@ function nextaudio()
 function enablerepeat()
 {
     repeat = !repeat;
+    console.log(repeat);
     repeatbtn.classList.toggle('repeatactive');
 }
-
 function progressbar()
 {
     //set time progressor line 
     let time = audio.currentTime;
     let duration = audio.duration;
     let progressvalue = (time / duration) * 100;
-    progress.ariaValueNow = progressvalue;
+    progress.value = progressvalue;
 
     //calculate duration times
     let hours = Math.floor(time / 60);
@@ -107,6 +107,14 @@ function audiocontroler()
    playing == false ? playaudio(): audiopause(); 
 }
 
+progress.onchange = () => 
+{
+    let audiotime = audio.duration * progress.value / 100;
+    audio.currentTime = audiotime;
+    progress.value = audiotime;
+}
+
+
 
 
 
@@ -114,4 +122,5 @@ currentplayer();
 playbtn.addEventListener('click', audiocontroler);
 prevbtn.addEventListener('click', prevaudio);
 nextbtn.addEventListener('click', nextaudio);
+repeatbtn.addEventListener('click', enablerepeat);
 audio.addEventListener('timeupdate',progressbar);

@@ -71,10 +71,12 @@ button
 }
 .progress-line
 {
-    background-color: lightgreen;
+    appearance: none;
+    background-color: transparent;
     width: 100%;
     height: 7px;
     border-radius: 100px;
+    color: white;
 }
 .progress-buble
 {
