@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>audio player</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="continer">
+            <div class="info">
+                <img src="music-src/cover.jpg" alt="audio image" id="audioimg" class="image">
+                <span class="title" id="title"></span>
+            </div>
+            <div class="progressbar">
+                <div class="progresscontroler">
+                    <div class="progress-continer">
+                        <input type="range" min="0" max="100" value="0" class="progress-line" id="progressor">
+                        <!-- <div class="progress-line" id="progressor"></div>
+                        <div class="progress-buble" id="buble"></div> -->
+                    </div>
+                    <p class="durationaudio" id="durationaudio">00:00</p>
+                </div>
+            </div>
+            <div class="controler">
+                <button class="prev" id="prev">previous</button>
+                <button class="play" id="playbtn">Play</button>
+                <button class="repeat" id="repeat">repeat</button>
+                <button class="next" id="next">next</button>
+            </div>
+        </div>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
