@@ -15,18 +15,18 @@ let audios =
 [
     {
         image:'music-src/cover.jpg',
-        title:'downtown glow',
-        file:'music-src/Downtown glow.mp3'
+        title:'down town',
+        file:'music-src/downtown.mp3'
     },
     {
         image:'music-src/cover.jpg',
-        title:'',
-        file:'music-src/Downtown glow.mp3'
+        title:'down town',
+        file:'music-src/downtown.mp3'
     },
     {
         image:'music-src/cover.jpg',
-        title:'',
-        file:'music-src/Downtown glow.mp3'
+        title:'down town',
+        file:'music-src/downtown.mp3'
     }
 ]
 let playing = false;
@@ -84,7 +84,7 @@ function progressbar()
     let time = audio.currentTime;
     let duration = audio.duration;
     let progressvalue = (time / duration) * 100;
-    progress.nodeValue = progressvalue;
+    progress.ariaValueNow = progressvalue;
 
     //calculate duration times
     let hours = Math.floor(time / 60);
