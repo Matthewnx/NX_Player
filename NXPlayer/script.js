@@ -87,6 +87,7 @@ function enablerepeat()
     repeatbtn.classList.toggle('repeatactive');
 }
 
+
 function progressbar()
 {
     //set time progressor line 
@@ -113,15 +114,14 @@ function progressbar()
 }
 function updater() 
 {
-    progress.onchange = () => 
+    progress.oninput = () => 
     {
-        let audiotime = audio.duration * progress.value / 100;
+        let audiotime = (audio.duration / 100) * progress.value;
         audio.currentTime = audiotime;
-        progress.value = audiotime;
-        return true;
     }
     progressbar();
 }
+
 
 
 
