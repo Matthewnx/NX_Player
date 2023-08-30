@@ -1,4 +1,4 @@
-
+// button identify
 const playbtn = document.getElementById('playbtn');
 const prevbtn = document.getElementById('prev');
 const nextbtn = document.getElementById('next');
@@ -8,9 +8,10 @@ const audiotitle = document.getElementById('title');
 const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
 
+// audio core import
 const audio = new Audio();
 
-
+// variable here
 let audios = 
 [
     {
@@ -33,7 +34,7 @@ let playing = false;
 let repeat = false;
 let audioindex = 0;
 
-
+//set music data
 function currentplayer()
 {
     let currentaudio = audios[audioindex];
@@ -42,6 +43,7 @@ function currentplayer()
     audiotitle.innerText = currentaudio.title;
 }
 
+// play and pasue functional
 function playaudio()
 {
     audio.play();
@@ -52,6 +54,12 @@ function audiopause()
     audio.pause();
     playing = false;
 }
+function audiocontroler() 
+{
+   playing == false ? playaudio(): audiopause(); 
+}
+
+//previous and next button functional 
 function prevaudio() 
 {
     audioindex--;
@@ -78,6 +86,7 @@ function enablerepeat()
     console.log(repeat);
     repeatbtn.classList.toggle('repeatactive');
 }
+
 function progressbar()
 {
     //set time progressor line 
@@ -102,25 +111,28 @@ function progressbar()
         audiopause();
     }
 }
-function audiocontroler() 
+function updater() 
 {
-   playing == false ? playaudio(): audiopause(); 
+    progress.onchange = () => 
+    {
+        let audiotime = audio.duration * progress.value / 100;
+        audio.currentTime = audiotime;
+        progress.value = audiotime;
+        return true;
+    }
+    progressbar();
 }
 
-progress.onchange = () => 
-{
-    let audiotime = audio.duration * progress.value / 100;
-    audio.currentTime = audiotime;
-    progress.value = audiotime;
-}
 
 
 
 
-
+//add current variable
 currentplayer();
+
+//event listner
 playbtn.addEventListener('click', audiocontroler);
 prevbtn.addEventListener('click', prevaudio);
 nextbtn.addEventListener('click', nextaudio);
 repeatbtn.addEventListener('click', enablerepeat);
-audio.addEventListener('timeupdate',progressbar);
+audio.addEventListener('timeupdate',updater);

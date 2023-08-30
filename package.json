@@ -1,0 +1,14 @@
+{
+  "name": "nxplayer",
+  "version": "1.0.0",
+  "description": "audio player",
+  "main": "NXPlayer/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "matthewnx",
+  "license": "GNU3",
+  "devDependencies": {
+    "eslint": "^8.48.0"
+  }
+}
