@@ -7,30 +7,52 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        
         <div class="continer">
+
+            <!-- music information -->
             <div class="info">
                 <img src="music-src/heart.PNG" alt="audio image" id="audioimg" class="image">
                 <span class="title" id="title"></span>
             </div>
+            
+            <!-- music setting -->
+            <div class="setting-continer">
+                <button class="setting-button" id="setting-btn"><ion-icon name="settings" class="setting-icons"></ion-icon></button>
+                <div class="list-content" id="setting-list">
+                    <button class="btn-p"><ion-icon name="timer"></ion-icon></button>
+                    <button class="btn-p volume-btn"><ion-icon name="volume-high"></ion-icon></button>
+                    <div class="vol">
+                        <p>some data</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- progressor -->
             <div class="progressbar">
                 <div class="progresscontroler">
                     <div class="progress-continer">
                         <input type="range" min="0" max="100" step="0.1" value="0" class="progress-line" id="progressor">
-                        <!-- <div class="progress-line" id="progressor"></div>
-                        <div class="progress-buble" id="buble"></div> -->
                     </div>
                     <p class="durationaudio" id="durationaudio">00:00</p>
                 </div>
             </div>
+
+            <!-- music control button -->
             <div class="controler">
-                <button class="prev" id="prev">previous</button>
-                <button class="play" id="playbtn">Play</button>
-                <button class="repeat" id="repeat">repeat</button>
-                <button class="next" id="next">next</button>
+                <button class="prev btn" id="prev"> <ion-icon name="play-skip-back"></ion-icon> </button>
+                <button class="play btn" id="playbtn"> <ion-icon name="play"></ion-icon> </button>
+                <button class="repeat btn" id="repeat"> <ion-icon name="repeat"></ion-icon> </button>
+                <button class="next btn" id="next"> <ion-icon name="play-skip-forward"></ion-icon> </button>
             </div>
         </div>
 
-
+        <!-- javascript file -->
         <script src="script.js"></script>
+
+        <!--icon-->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>

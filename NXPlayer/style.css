@@ -11,6 +11,7 @@ body
     align-items: flex-end;
     height: 100vh;
     background-color: #dae2e9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*main continer*/
@@ -27,9 +28,15 @@ body
 }
 
 /*button style*/
-
-button
+.controler
 {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.btn
+{
+    display: flex;
     border: 0;
     outline: 0;
     padding: 3px 2px;
@@ -39,6 +46,15 @@ button
     background-color: rgb(98, 253, 137);
 }
 
+.btn:hover
+{
+    background-color: rgb(90, 230, 125);
+}
+.btn:hover svg
+{
+    fill: rgb(73, 73, 73);
+    color:rgb(73, 73, 73);
+}
 .repeatactive
 {
     background-color:rgb(98, 196, 253) ;
@@ -85,7 +101,6 @@ button
     background-color: rgb(255, 255, 255);
     border-radius: 100px;
 }
-
 .durationaudio
 {
     margin: 0px 10px;
@@ -111,3 +126,97 @@ button
     height: 64px;
     border-radius: 10px;
 }
+
+
+
+/*setting list */
+.setting-continer
+{
+    display: flex;
+    position: relative;
+}
+.setting-button
+{
+    display: flex;
+    height: 100%;
+    border: 0;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgb(224, 224, 224);
+    background:transparent;
+}
+.setting-button:hover
+{
+    background:rgb(49, 49, 49,0.02);
+}
+.list-content
+{
+    
+    display: none;
+    position: absolute;
+    background-color: rgba(35, 46, 61);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.setting-continer .list-content .btn-p
+{
+    display: block;
+    padding: 5px 0px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 3;
+    border: 0;
+    outline:0;
+    background-color: transparent;
+    width: 100%;
+    width: 50px;
+}
+.setting-continer .list-content ion-icon
+{
+    width: 25px;
+    height: 25px;
+}
+
+.setting-continer .list-content ion-icon:hover
+{
+    fill: black;
+}
+
+.list-content-active
+{
+    display: block;
+    bottom:200%;
+    left: -50%;
+}
+
+.vol
+{
+    position: absolute;
+    display: none;
+}
+
+.volume-btn:focus ~ .vol
+{
+    display: block;
+}
+
+/*icons*/
+
+ion-icon
+{
+    color: white;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.setting-icons
+{
+    width: 25px;
+    height: 25px;
+}
+
