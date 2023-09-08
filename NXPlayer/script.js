@@ -7,8 +7,6 @@ const audioimage = document.getElementById('audioimg');
 const audiotitle = document.getElementById('title');
 const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
-const settingbtn = document.getElementById("setting-btn");
-const settinglist = document.getElementById("setting-list");
 
 // audio core import
 const audio = new Audio();
@@ -126,11 +124,6 @@ function updater()
 
 
 // setting functional
-
-settingbtn.onclick = () =>
-{
-    settinglist.classList.toggle("list-content-active");
-}
 
 
 

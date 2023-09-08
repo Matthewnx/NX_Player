@@ -94,18 +94,46 @@ body
     border-radius: 100px;
     color: white;
 }
-.progress-buble
-{
-    position: absolute;
-    padding: 7px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 100px;
-}
 .durationaudio
 {
     margin: 0px 10px;
     color: white;
 }
+/* volume range */
+.volume-continer
+{
+
+    height: 10px;
+    margin: 5px;
+}
+.volume-seprator
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vol-input-continer
+{
+    position: relative;
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 7px;
+    border-radius: 100px;
+}
+.vol-input
+{
+    appearance: none;
+    background-color: transparent;
+    width: 100%;
+    height: 7px;
+    border-radius: 100px;
+    color: white;
+}
+
 /*music information*/
 .info
 {
@@ -127,82 +155,6 @@ body
     border-radius: 10px;
 }
 
-
-
-/*setting list */
-.setting-continer
-{
-    display: flex;
-    position: relative;
-}
-.setting-button
-{
-    display: flex;
-    height: 100%;
-    border: 0;
-    font-size: 18px;
-    cursor: pointer;
-    color: rgb(224, 224, 224);
-    background:transparent;
-}
-.setting-button:hover
-{
-    background:rgb(49, 49, 49,0.02);
-}
-.list-content
-{
-    
-    display: none;
-    position: absolute;
-    background-color: rgba(35, 46, 61);
-    border-radius: 5px;
-    z-index: 2;
-}
-
-.setting-continer .list-content .btn-p
-{
-    display: block;
-    padding: 5px 0px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    z-index: 3;
-    border: 0;
-    outline:0;
-    background-color: transparent;
-    width: 100%;
-    width: 50px;
-}
-.setting-continer .list-content ion-icon
-{
-    width: 25px;
-    height: 25px;
-}
-
-.setting-continer .list-content ion-icon:hover
-{
-    fill: black;
-}
-
-.list-content-active
-{
-    display: block;
-    bottom:200%;
-    left: -50%;
-}
-
-.vol
-{
-    position: absolute;
-    display: none;
-}
-
-.volume-btn:focus ~ .vol
-{
-    display: block;
-}
-
 /*icons*/
 
 ion-icon
@@ -213,10 +165,3 @@ ion-icon
     padding: 0;
     margin: 0;
 }
-
-.setting-icons
-{
-    width: 25px;
-    height: 25px;
-}
-
