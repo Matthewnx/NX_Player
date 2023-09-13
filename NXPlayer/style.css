@@ -102,15 +102,25 @@ body
 /* volume range */
 .volume-continer
 {
-
+    position: relative;
     height: 10px;
     margin: 5px;
 }
 .volume-seprator
 {
+
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: rgb(70, 70, 70);
+    transform: rotate(-90deg);
+    position: absolute;
+    width: 130px;
+    padding: 10px;
+    bottom: 87px;
+    right: -50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .vol-input-continer
@@ -133,7 +143,18 @@ body
     border-radius: 100px;
     color: white;
 }
-
+.vol-button
+{
+    background-color: rgb(52,52,52);
+    outline: 0;
+    border: 0;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.vol-button:hover
+{
+    background-color: rgb(60,60,60);
+}
 /*music information*/
 .info
 {
