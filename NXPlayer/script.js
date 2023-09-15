@@ -7,6 +7,8 @@ const audioimage = document.getElementById('audioimg');
 const audiotitle = document.getElementById('title');
 const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
+const volumeinput = document.getElementById("volinput");
+const volumeicon = document.querySelectorAll("#volicon");
 
 // audio core import
 const audio = new Audio();
@@ -123,11 +125,38 @@ function updater()
 }
 
 
-// setting functional
+// volume functional
 
-
-
-
+volumeinput.oninput = () =>
+{
+    let volumevalue = volumeinput.value;
+    audio.volume = volumevalue / 100;
+    console.log(volumevalue);
+    
+    volumeicon.forEach( icon => {
+        if(volumevalue > 80)
+        {
+            icon.setAttribute('name','volume-high');
+        }
+        if(volumevalue < 80)
+        {
+            icon.setAttribute('name','volume-medium');
+        }
+        if(volumevalue < 50)
+        {
+            icon.setAttribute('name','volume-low');
+        }
+        if(volumevalue < 10)
+        {
+            icon.setAttribute('name','volume-off');
+        }
+        if(volumevalue == 0)
+        {
+            icon.setAttribute('name','volume-mute');
+        }
+    }
+    );
+}
 
 
 //add current variable
