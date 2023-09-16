@@ -9,6 +9,8 @@ const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
 const volumeinput = document.getElementById("volinput");
 const volumeicon = document.querySelectorAll("#volicon");
+const volumebutton = document.getElementById("volumebtn");
+const volumemodal = document.getElementById("volcontiners");
 
 // audio core import
 const audio = new Audio();
@@ -35,6 +37,7 @@ let audios =
 let playing = false;
 let repeat = false;
 let audioindex = 0;
+let volboolean = false;
 
 //set music data
 function currentplayer()
@@ -131,7 +134,6 @@ volumeinput.oninput = () =>
 {
     let volumevalue = volumeinput.value;
     audio.volume = volumevalue / 100;
-    console.log(volumevalue);
     
     volumeicon.forEach( icon => {
         if(volumevalue > 80)
@@ -158,6 +160,20 @@ volumeinput.oninput = () =>
     );
 }
 
+volumebutton.onclick = () =>
+{
+    if(volboolean == false)
+    {
+        volumemodal.style.display = "flex";
+        volboolean = true;
+    }
+    else if(volboolean == true)
+    {
+        volumemodal.style.display = "none";
+        volboolean = false;
+    }
+    console.log("hello")
+}
 
 //add current variable
 currentplayer();
