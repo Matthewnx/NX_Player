@@ -13,29 +13,40 @@
             <!-- music information -->
             <div class="info">
                 <img src="music-src/heart.PNG" alt="audio image" id="audioimg" class="image">
-                <span class="title" id="title"></span>
+                <div class="textinfoholder">
+                    <span class="title" id="title"></span>
+                    <span class="author" id="author"></span>
+                </div>
             </div>
             
             <!-- music setting -->
             <div class="volume-continer">
+
                 <button class="vol-button" id="volumebtn"><ion-icon name="volume-high" class="vol-icon" id="volicon"></ion-icon></button>
                 <div class="volume-seprator" id="volcontiners">
-                    <ion-icon name="volume-high" class="vol-icon" id="volicon"></ion-icon>
+
                     <div class="vol-input-continer">
-                        <input type="range" min="0" max="100" value="100" class="vol-input" id="volinput">
+                        <input type="range" min="0" max="100" value="100" class="vol-input slider" id="volinput">
                     </div>
+
                 </div>
+
             </div>
 
 
             <!-- progressor -->
             <div class="progressbar">
+
                 <div class="progresscontroler">
+
                     <div class="progress-continer">
-                        <input type="range" min="0" max="100" step="0.1" value="0" class="progress-line" id="progressor">
+                        <input type="range" min="0" max="100" step="0.1" value="0" class="progress-line slider" id="progressor">
+                        <div class="progressbackground"></div>
                     </div>
                     <p class="durationaudio" id="durationaudio">00:00</p>
+
                 </div>
+
             </div>
 
             <!-- music control button -->

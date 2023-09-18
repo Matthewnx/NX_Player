@@ -5,6 +5,7 @@ const nextbtn = document.getElementById('next');
 const repeatbtn = document.getElementById('repeat');
 const audioimage = document.getElementById('audioimg');
 const audiotitle = document.getElementById('title');
+const audioauthor = document.getElementById('author');
 const progress = document.getElementById('progressor');
 const durationtext = document.getElementById("durationaudio");
 const volumeinput = document.getElementById("volinput");
@@ -20,18 +21,21 @@ let audios =
 [
     {
         image:'music-src/heart.PNG',
-        title:'down town',
-        file:'music-src/downtown.mp3'
+        title:'down town glow',
+        file:'music-src/downtown.mp3',
+        author:'Ghostrifter Official'
     },
     {
         image:'music-src/heart.PNG',
-        title:'down town',
-        file:'music-src/downtown.mp3'
+        title:'down town glow',
+        file:'music-src/downtown.mp3',
+        author:'Ghostrifter Official'
     },
     {
         image:'music-src/heart.PNG',
-        title:'down town',
-        file:'music-src/downtown.mp3'
+        title:'down town glow',
+        file:'music-src/downtown.mp3',
+        author:'Ghostrifter Official'
     }
 ]
 let playing = false;
@@ -46,6 +50,8 @@ function currentplayer()
     audio.src = currentaudio.file;
     audioimage.setAttribute('src',currentaudio.image);
     audiotitle.innerText = currentaudio.title;
+    audioauthor.innerText = currentaudio.author;
+    
 }
 
 // play and pasue functional
@@ -70,7 +76,7 @@ function prevaudio()
     audioindex--;
     if(audioindex < 0)
     {
-        audioindex = audios.length - 1 ;
+        audioindex = audios.length - 1;
     }
     currentplayer();
     playaudio();

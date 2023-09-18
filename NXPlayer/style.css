@@ -1,3 +1,10 @@
+:root
+{
+    --maincolor:#8FACC0;
+    --maincolorhover:#7da2bb;
+    --seccolor:#818D97;
+    --backcolor:#484D51;
+}
 *
 {
     margin: 0;
@@ -23,9 +30,10 @@ body
     justify-content: space-between;
     align-items: center;
     width: 100dvw;
-    background-color: rgb(70, 70, 70);
+    background-color: var(--backcolor);
     white-space: nowrap;
 }
+
 
 /*button style*/
 .controler
@@ -43,17 +51,11 @@ body
     border-radius: 2px;
     color: rgb(0, 0, 0);
     font-size: 17px;
-    background-color: rgb(98, 253, 137);
+    background-color: var(--maincolor);
 }
-
 .btn:hover
 {
-    background-color: rgb(90, 230, 125);
-}
-.btn:hover svg
-{
-    fill: rgb(73, 73, 73);
-    color:rgb(73, 73, 73);
+    background-color: var(--maincolorhover);
 }
 .repeatactive
 {
@@ -64,7 +66,7 @@ body
 .progressbar
 {
     width:  100%;
-    height: 10px;
+
     margin: 5px;
 }
 .progresscontroler
@@ -99,13 +101,23 @@ body
     margin: 0px 10px;
     color: white;
 }
+
+.progressbackground
+{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 7px;
+    background-color: black;
+}
+
 /* volume range */
 
 .volume-continer
 {
     position: relative;
     margin: 5px;
-    height: 10px;
+
 }
 .volume-seprator
 {
@@ -113,11 +125,11 @@ body
     display: none;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(70, 70, 70);
+    background-color: var(--backcolor);
     transform: rotate(-90deg);
     position: absolute;
     width: 130px;
-    padding: 10px;
+    padding: 13px;
     bottom: 87px;
     right: -50px;
     border-top-right-radius: 5px;
@@ -148,7 +160,7 @@ body
 }
 .vol-button
 {
-    background-color: rgb(52,52,52);
+    background-color: var(--seccolor);
     outline: 0;
     border: 0;
     padding: 3px 5px;
@@ -156,7 +168,11 @@ body
 }
 .vol-button:hover
 {
-    background-color: rgb(60,60,60);
+    background-color: var(--seccolor);
+}
+.vol-icon-inner
+{
+    font-size: 25px;
 }
 
 /*music information*/
@@ -164,20 +180,36 @@ body
 {
     display: flex;
     align-items: flex-end;
-    flex-direction: row-reverse;
+    flex-direction: row;
     padding: 5px;
 }
 .info .title
 {
-    white-space: nowrap;
-    padding: 5px;
     color: white;
+    font-size: 17px;
+}
+.info .author
+{
+    color: rgb(184, 184, 184);
+    font-size: 15px;
+
 }
 .info .image
 {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
+    object-fit: cover;
+}
+.textinfoholder
+{
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items:left;
+    margin: 0px 5px;
+    margin-right:20px;
 }
 
 /*icons*/
@@ -189,4 +221,28 @@ ion-icon
     height: 20px;
     padding: 0;
     margin: 0;
+}
+/*thumb slider*/
+
+.slider::-webkit-slider-thumb
+{
+    appearance: none;
+    background-color: rgb(116, 193, 255);
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
+}
+
+
+
+
+
+/* for firefox */
+.slider::-moz-range-thumb
+{
+    appearance: none;
+    background-color: rgb(116, 193, 255);
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
 }
