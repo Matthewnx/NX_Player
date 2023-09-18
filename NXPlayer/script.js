@@ -12,6 +12,8 @@ const volumeinput = document.getElementById("volinput");
 const volumeicon = document.querySelectorAll("#volicon");
 const volumebutton = document.getElementById("volumebtn");
 const volumemodal = document.getElementById("volcontiners");
+const progressback = document.getElementById("pbg");
+const progressbackvol = document.getElementById("pbgvolume");
 
 // audio core import
 const audio = new Audio();
@@ -122,6 +124,7 @@ function progressbar()
     {
         audiopause();
     }
+    progressback.style.width = progress.value + "%";
 }
 function updater() 
 {
@@ -129,17 +132,25 @@ function updater()
     {
         let audiotime = (audio.duration / 100) * progress.value;
         audio.currentTime = audiotime;
+        progressback.style.width = progress.value + "%";
+        audio.volume = 0;
     }
+    audio.volume = volumeinput.value / 100;
     progressbar();
+}
+//for fix unhandled background
+progress.oninput = () =>
+{
+    progressback.style.width = progress.value + "%";
 }
 
 
 // volume functional
-
 volumeinput.oninput = () =>
 {
     let volumevalue = volumeinput.value;
     audio.volume = volumevalue / 100;
+    progressbackvol.style.width = volumeinput.value +"%";
     
     volumeicon.forEach( icon => {
         if(volumevalue > 80)
@@ -165,6 +176,8 @@ volumeinput.oninput = () =>
     }
     );
 }
+// fix unhandled background width
+progressbackvol.style.width = "100%";
 
 volumebutton.onclick = () =>
 {

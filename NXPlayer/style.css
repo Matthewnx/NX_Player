@@ -3,7 +3,12 @@
     --maincolor:#8FACC0;
     --maincolorhover:#7da2bb;
     --seccolor:#818D97;
+    --seccolorhover:#6d7c88;
     --backcolor:#484D51;
+    --mainfocus:#bad4e7;
+    --mainfocushover:#a8c5da;
+    --thumb:#5b98e9;
+    --progressthumb:#447ac2;
 }
 *
 {
@@ -49,7 +54,6 @@ body
     outline: 0;
     padding: 3px 2px;
     border-radius: 2px;
-    color: rgb(0, 0, 0);
     font-size: 17px;
     background-color: var(--maincolor);
 }
@@ -59,7 +63,11 @@ body
 }
 .repeatactive
 {
-    background-color:rgb(98, 196, 253) ;
+    background-color:var(--mainfocus);
+}
+.repeatactive:hover
+{
+    background-color:var(--mainfocushover);
 }
 
 /*the progress bar */
@@ -86,6 +94,7 @@ body
     width: 100%;
     height: 7px;
     border-radius: 100px;
+    z-index: 1;
 }
 .progress-line
 {
@@ -106,9 +115,9 @@ body
 {
     position: absolute;
     z-index: -1;
-    width: 100%;
     height: 7px;
-    background-color: black;
+    border-radius: 10px;
+    background-color: var(--progressthumb);
 }
 
 /* volume range */
@@ -168,7 +177,7 @@ body
 }
 .vol-button:hover
 {
-    background-color: var(--seccolor);
+    background-color: var(--seccolorhover);
 }
 .vol-icon-inner
 {
@@ -227,21 +236,17 @@ ion-icon
 .slider::-webkit-slider-thumb
 {
     appearance: none;
-    background-color: rgb(116, 193, 255);
+    background-color: var(--thumb);
     height: 15px;
     width: 15px;
     border-radius: 4px;
 }
 
-
-
-
-
 /* for firefox */
 .slider::-moz-range-thumb
 {
     appearance: none;
-    background-color: rgb(116, 193, 255);
+    background-color: var(--thumb);
     height: 15px;
     width: 15px;
     border-radius: 4px;
