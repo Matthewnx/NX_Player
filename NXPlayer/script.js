@@ -1,3 +1,8 @@
+// create custom HTML tag
+
+const NXplayer = document.createElement('nx-player');
+
+
 // button identify
 const playbtn = document.getElementById('playbtn');
 const prevbtn = document.getElementById('prev');
