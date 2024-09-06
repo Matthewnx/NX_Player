@@ -2,12 +2,13 @@
 
 const NXplayer = document.querySelector("nx-player")
 
-
+//fetch Ui element
 fetch('Player.html')
     .then(response => response.text())
     .then(content => setup(content));
 
 
+//initalize logic
 function setup(content) 
 {
     NXplayer.innerHTML = content;
