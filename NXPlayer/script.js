@@ -1,20 +1,6 @@
 // create custom HTML tag
 
-class Nxplayertemplater extends HTMLElement
-{
-    constructor() 
-    {
-        super();
-        this.attachShadow({mode: "open"});
-    }
-    connectedCallback()
-    {
-        const template = document.createElement('nx-player');
-        template.innerHTML = ``
-    }
-}
-
-// const NXplayer = document.querySelector('nx-player');
+const NXplayer = document.querySelector("nx-player")
 
 
 fetch('Player.html')
@@ -24,9 +10,7 @@ fetch('Player.html')
 
 function setup(content) 
 {
-    // NXplayer.innerHTML = content;
-    // let player = new NXplayer();
-    // document.body.appendChild(player);
+    NXplayer.innerHTML = content;
     // button identify
     const playbtn = document.getElementById('playbtn');
     const prevbtn = document.getElementById('prev');
